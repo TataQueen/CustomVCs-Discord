@@ -58,6 +58,12 @@ class VoiceChat(commands.Cog):
     try:
       if after.channel is not None:
         if after.channel.id == defaults.masterChannel:
+          if before.channel is not None:
+            results = getInfo(member.id)
+            if results:
+              if before.channel.id == results[3]:
+                saveChannel(member.id, before)
+            await ifEmptyDelete(before)
           print(f"{member.name} is trying to create a channel")
           results = getInfo(member.id)
           print(results)
