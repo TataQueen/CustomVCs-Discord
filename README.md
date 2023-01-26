@@ -7,9 +7,10 @@ When users join a master channel they get a custom voice chat for themselves, yo
 
 ## Setup
 1. Clone the repository into your machine with `git clone https://github.com/TataQueen/CustomVCs-Discord`
-2. Create a file named `config.py` and place your bot token inside like this:
+2. Run `cdb.py` to create the database for the bot to work
+3. Create a file named `config.py` and place your bot token inside like this:
  ```python
  token = "YOURTOKENHERE"
  ``` 
-3. Edit `defaults.py` and change the values for your server, explained inside the file.
-4. Run with `python3 main.py`
+4. Edit `defaults.py` and change the values for your server, explained inside the file.
+5. Run with `python3 main.py`
