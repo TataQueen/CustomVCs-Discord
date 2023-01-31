@@ -7,3 +7,4 @@ Scripts
 __pycache__
 cogs/__pycache__
 pyvenv.cfg
+language.py

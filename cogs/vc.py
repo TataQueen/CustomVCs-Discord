@@ -1,5 +1,4 @@
 import defaults
-import discord
 from discord.ext import commands
 from discord.utils import get
 import sqlite3
@@ -35,7 +34,7 @@ def saveChannel(memberId, before):
   c.execute("UPDATE custom_channels SET channel_name = :channel_name, user_limit = :user_limit WHERE user_id = :user_id", {'channel_name':before.channel.name, 'user_limit':before.channel.user_limit, 'user_id':memberId})
   conn.commit()
   conn.close()
-  print(f"Guardado el estado de {memberId}")
+  print(f"Saved channel state of {memberId}")
 
 async def ifEmptyDelete(before):
   if len(before.channel.members) == 0 and before.channel.id not in defaults.staticChannels:
@@ -51,10 +50,6 @@ class VoiceChat(commands.Cog):
   
   @commands.Cog.listener()
   async def on_voice_state_update(self, member, before, after):
-    # print(before)
-    # print(after)
-    # voice_state = bool(member.voice)
-    # print(voice_state)
     try:
       if after.channel is not None:
         if after.channel.id == defaults.masterChannel:
@@ -78,21 +73,27 @@ class VoiceChat(commands.Cog):
             user_limit = defaults.userLimit
             channel = await member.guild.create_voice_channel(channel_name, category=voice_category, user_limit=user_limit)
             createNewEntry(member.id, channel_name, user_limit, channel.id)
-          await member.move_to(channel)
+          try:
+            await member.move_to(channel)
+          except Exception as exc:
+            print(exc)
+          if len(channel.members) == 0:
+            await channel.delete()
+            return 0
           await channel.set_permissions(member, connect=defaults.connect, move_members=defaults.move_members, speak=defaults.speak, mute_members=defaults.mute_members ,deafen_members=defaults.deafen_members ,priority_speaker=defaults.priority_speaker ,manage_channels=defaults.manage_channels, stream=defaults.stream, view_channel=defaults.view_channel)
         elif before.channel is None:
-          print(f'{member.name} se ha unido a {after.channel.id}')
+          print(f'{member.name} has joined {after.channel.id}')
         elif before.channel.id == after.channel.id:
-          print(f"{member.name} se ha muteado/ensordecido")
+          print(f"{member.name} has muted/deafened")
         else:
-          print(f'{member.name} se ha movido entre {before.channel.id} y {after.channel.id}')
+          print(f'{member.name} has moved between {before.channel.id} y {after.channel.id}')
           results = getInfo(member.id)
           if results:
             if before.channel.id == results[3]:
               saveChannel(member.id, before)
           await ifEmptyDelete(before)
       elif after.channel is None:
-        print(f"{member.name} se ha desconectado")
+        print(f"{member.name} has disconnected")
         results = getInfo(member.id)
         if results:
           if before.channel.id == results[3]:
@@ -105,4 +106,5 @@ class VoiceChat(commands.Cog):
 
 
 async def setup(bot):
+  if defaults.enableVCpy == True:
     await bot.add_cog(VoiceChat(bot))

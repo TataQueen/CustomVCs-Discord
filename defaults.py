@@ -1,10 +1,19 @@
-# - Main settings (IMPORTANT!!!)
+# __   _____   _ __  _   _ 
+# \ \ / / __| | '_ \| | | |
+#  \ V / (__ _| |_) | |_| |
+#   \_/ \___(_) .__/ \__, |
+#             |_|    |___/ 
+
+enableVCpy = True # Disable vc.py if installed
+
+# - Main settings ( Important!! )
 masterChannel = 1067853653643370580 #Channel ID for the channel creator (Must be a voice chat, cant leave blank).
 categoryID = 1067251018150182932 #Category ID for the customized channels.
 userLimit = 0 #User limit for voice channels (0-99), set 0 for unlimited.
 
 
-# - Static channels (prevent channels from being deleted)
+
+# - Static channels (prevent certain channels from being deleted)
 staticChannels = [masterChannel, 1067249196488458260] #You should put here the IDs of VoiceChats that you don't want the bot to delete.
 
 
@@ -25,3 +34,15 @@ stream = True # Can the user share their screen/games?
 view_channel = True # Can the user view the channel? (I would recommend leaving it true...)
 
 
+#              __                               
+# __   _____  / /  ___   __ _ ___   _ __  _   _ 
+# \ \ / / __|/ /  / _ \ / _` / __| | '_ \| | | |
+#  \ V / (__/ /__| (_) | (_| \__ \_| |_) | |_| |
+#   \_/ \___\____/\___/ \__, |___(_) .__/ \__, |
+#                       |___/      |_|    |___/ 
+
+enableVCLogpy = True # Disable vcLogs.py if installed
+
+# Main settings ( Important!! )
+customVCLog = True # Set this to false if you don't have vc.py
+logsChannel = 1068495141490409572 # This is where all voice chat logs get saved
