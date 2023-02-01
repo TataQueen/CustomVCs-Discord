@@ -46,3 +46,4 @@ enableVCLogpy = True # Disable vcLogs.py if installed
 # Main settings ( Important!! )
 customVCLog = True # Set this to false if you don't have vc.py
 logsChannel = 1068495141490409572 # This is where all voice chat logs get saved
+sameChannelUpdates = True # Should updates like self-mute/deafen appear in the logs channel ( Takes lots of space and not very useful ) 

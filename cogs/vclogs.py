@@ -21,7 +21,7 @@ class VoiceChat_Logs(commands.Cog):
       if after.channel.id == defaults.masterChannel and defaults.customVCLog == True:
         await channel.send(f"{username} is trying to create a custom channel {formattime}")
     elif before.channel is not None and after.channel is not None:
-      if before.channel.id == after.channel.id:
+      if before.channel.id == after.channel.id and defaults.sameChannelUpdates == True:
         await channel.send(f"{username} has updated their status on {after.channel.name}({after.channel.id}) {formattime}")
         return 0
       await channel.send(f"{username} has moved between {before.channel.name}({before.channel.id}) and {after.channel.name}({after.channel.id}) {formattime}")

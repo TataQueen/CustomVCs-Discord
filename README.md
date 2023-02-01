@@ -1,5 +1,5 @@
 # CustomVCs-Discord
-Customizable bot for custom VoiceChannels for your users
+Customizable self-hosted bot for custom VoiceChannels for your users and logging
 
 ## Functionality
 When users join a master channel they get a custom voice chat for themselves, you can edit the permissions they get
@@ -14,3 +14,6 @@ When users join a master channel they get a custom voice chat for themselves, yo
  ``` 
 4. Edit `defaults.py` and change the values for your server, explained inside the file.
 5. Run with `python3 main.py`
+
+## Future features
+- Support for translations
