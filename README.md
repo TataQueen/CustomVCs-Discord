@@ -2,6 +2,7 @@
 Customizable self-hosted bot for custom VoiceChannels for your users and logging
 
 Support is very much appreciated!
+
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/M4M6GR1HT)
 
 ## Functionality
