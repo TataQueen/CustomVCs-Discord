@@ -4,11 +4,11 @@
 #   \_/ \___(_) .__/ \__, |
 #             |_|    |___/ 
 
-enableVCpy = True # Disable vc.py if installed
+enableVCpy = True # Enable vc.py if installed
 
 # - Main settings ( Important!! )
-masterChannel = 1067853653643370580 #Channel ID for the channel creator (Must be a voice chat, cant leave blank).
-categoryID = 1067251018150182932 #Category ID for the customized channels.
+masterChannel = 0 #Channel ID for the channel creator (Must be a voice chat, cant leave blank).
+categoryID = 0 #Category ID for the customized channels.
 userLimit = 0 #User limit for voice channels (0-99), set 0 for unlimited.
 
 
@@ -41,9 +41,29 @@ view_channel = True # Can the user view the channel? (I would recommend leaving 
 #   \_/ \___\____/\___/ \__, |___(_) .__/ \__, |
 #                       |___/      |_|    |___/ 
 
-enableVCLogpy = True # Disable vcLogs.py if installed
+enableVCLogpy = True # Enable vcLogs.py if installed
 
 # Main settings ( Important!! )
 customVCLog = True # Set this to false if you don't have vc.py
 logsChannel = 1068495141490409572 # This is where all voice chat logs get saved
 sameChannelUpdates = True # Should updates like self-mute/deafen appear in the logs channel ( Takes lots of space and not very useful ) 
+
+
+#              _   _     __      __                      
+#   __ _ _ __ | |_(_) /\ \ \___ / _|_      ___ __  _   _ 
+#  / _` | '_ \| __| |/  \/ / __| |_\ \ /\ / / '_ \| | | |
+# | (_| | | | | |_| / /\  /\__ \  _|\ V  V /| |_) | |_| |
+#  \__,_|_| |_|\__|_\_\ \/ |___/_|   \_/\_(_) .__/ \__, |
+#                                           |_|    |___/ 
+
+enableantiNSFWpy = True # Enable antinsfw.py if installed 
+logNSFWpy = True # Logs record of those who try to enable NSFW in a VC located on the custom vc category (requires vclogs.py)
+
+
+
+
+
+
+# Credits to:
+
+# - TAAG: ASCII art made with https://patorjk.com/software/taag/#p=display&f=Ogre&t=Example

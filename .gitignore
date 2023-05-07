@@ -8,3 +8,4 @@ __pycache__
 cogs/__pycache__
 pyvenv.cfg
 language.py
+cogs/staff.py

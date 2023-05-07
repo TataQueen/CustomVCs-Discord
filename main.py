@@ -37,7 +37,7 @@ class CustomHelpCommand(commands.HelpCommand):
   async def send_command_help(self, command):
     await self.get_destination().send(command.name)
 
-bot = commands.Bot(command_prefix = commands.when_mentioned_or('i.') ,intents=intents, help_command=CustomHelpCommand())
+bot = commands.Bot(command_prefix = commands.when_mentioned_or('vc.') ,intents=intents, help_command=CustomHelpCommand())
 
 @bot.event
 async def on_ready():
